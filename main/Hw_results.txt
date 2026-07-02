@@ -1,0 +1,18 @@
+proba - Mi a neve a világ legnépszerűbb internetes keresőmotorjának? -> Helyes válasz! (5 pont)
+proba - Mi a rövidítése a weboldalak címében használt biztonságos átviteli protokollnak? -> Helyes válasz! (5 pont)
+proba - Melyik évben jelent meg az első iPhone? -> Helytelen válasz! A helyes válasz "2007" lett volna!
+proba - Hány bitből áll egy byte? -> Helyes válasz! (5 pont)
+proba - Milyen típusú adatbázis-kezelő nyelv a rövidítése az SQL-nek? -> Heltelen válasz! A helyes válasz "Strukturált lekérdező nyelv" lett volna!
+proba - Melyik cég fejleszti a Windows operációs rendszert? -> Helyes válasz! (5 pont)
+teszt elek - Melyik évben ért véget az első világháború? -> Helyes válasz! (5 pont)
+teszt elek - Melyik évben volt a mohácsi csata? -> Helytelen válasz! A helyes válasz "1526" lett volna!
+teszt elek - Melyik napon történt a francia forradalom kitörése (a Bastille bevétele)? -> Helytelen válasz! A helyes válasz "1789-07-14" lett volna! (eltérés: 40736 nap)
+teszt elek - Ki volt az Egyesült Államok első elnöke? -> Helyes válasz! (5 pont)
+teszt elek - Melyik birodalom bukásával zárult az ókor időszaka? -> Heltelen válasz! A helyes válasz "Római Birodalom" lett volna!
+teszt elek - Ki volt az első magyar király? -> Helyes válasz! (5 pont)
+marokMarcsa - Hány kelvin a fizikai abszolút nulla fok Celsiusban kifejezve? (Negatív előjellel, tizedesjegy nélkül) -> Helytelen válasz! A helyes válasz "-273" lett volna!
+marokMarcsa - Körülbelül hány százezer km/s a fénysebesség vákuumban? (Kerekítve) -> Helytelen válasz! A helyes válasz "300000" lett volna!
+marokMarcsa - Mi a jele az elektromos áramerősségnek a fizikában? -> Helyes válasz! (5 pont)
+marokMarcsa - Melyik tudós nevéhez fűződik a tömeg-energia ekvivalencia (E=mc²)? -> Helyes válasz! (5 pont)
+marokMarcsa - Milyen töltésű részecskék találhatók az atommagban a neutronok mellett? -> Helyes válasz! (5 pont)
+marokMarcsa - Hány Celsius-fok a víz fagyáspontja normál légköri nyomáson? -> Helyes válasz! (5 pont)

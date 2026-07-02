@@ -1,0 +1,146 @@
+[
+	{
+		"id": 1,
+		"question_category": 1,
+		"question_type": "2",
+		"question": "Melyik évben volt a mohácsi csata?",
+		"correct_answer": "1526",
+		"pattern": "^(1526)$"
+	},
+	{
+		"id": 2,
+		"question_category": 1,
+		"question_type": "1",
+		"question": "Ki volt az első magyar király?",
+		"correct_answer": "I. István",
+		"pattern": "^(i\\.? ?istván|szent istván)$"
+	},
+	{
+		"id": 3,
+		"question_category": 1,
+		"question_type": "4",
+		"question": "Melyik napon történt a francia forradalom kitörése (a Bastille bevétele)?",
+		"correct_answer": "1789-07-14",
+		"pattern": "^(1789-07-14)$"
+	},
+	{
+		"id": 4,
+		"question_category": 1,
+		"question_type": "1",
+		"question": "Melyik birodalom bukásával zárult az ókor időszaka?",
+		"correct_answer": "Római Birodalom",
+		"pattern": "^(nyugatrómai birodalom|római birodalom)$"
+	},
+	{
+		"id": 5,
+		"question_category": 1,
+		"question_type": "2",
+		"question": "Melyik évben ért véget az első világháború?",
+		"correct_answer": "1918",
+		"pattern": "^(1918)$"
+	},
+	{
+		"id": 6,
+		"question_category": 1,
+		"question_type": "1",
+		"question": "Ki volt az Egyesült Államok első elnöke?",
+		"correct_answer": "George Washington",
+		"pattern": "^(george washington|washington)$"
+	},
+	{
+		"id": 7,
+		"question_category": 2,
+		"question_type": "3",
+		"question": "Hány Celsius-fok a víz fagyáspontja normál légköri nyomáson?",
+		"correct_answer": "0",
+		"pattern": "^(0)$"
+	},
+	{
+		"id": 8,
+		"question_category": 2,
+		"question_type": "1",
+		"question": "Mi a jele az elektromos áramerősségnek a fizikában?",
+		"correct_answer": "I",
+		"pattern": "^(i)$"
+	},
+	{
+		"id": 9,
+		"question_category": 2,
+		"question_type": "3",
+		"question": "Körülbelül hány százezer km/s a fénysebesség vákuumban? (Kerekítve)",
+		"correct_answer": "300000",
+		"pattern": "^(300000|299792)$"
+	},
+	{
+		"id": 10,
+		"question_category": 2,
+		"question_type": "1",
+		"question": "Melyik tudós nevéhez fűződik a tömeg-energia ekvivalencia (E=mc²)?",
+		"correct_answer": "Albert Einstein",
+		"pattern": "^(albert einstein|einstein)$"
+	},
+	{
+		"id": 11,
+		"question_category": 2,
+		"question_type": "1",
+		"question": "Milyen töltésű részecskék találhatók az atommagban a neutronok mellett?",
+		"correct_answer": "Proton",
+		"pattern": "^(proton|protonok)$"
+	},
+	{
+		"id": 12,
+		"question_category": 2,
+		"question_type": "3",
+		"question": "Hány kelvin a fizikai abszolút nulla fok Celsiusban kifejezve? (Negatív előjellel, tizedesjegy nélkül)",
+		"correct_answer": "-273",
+		"pattern": "^(-273|\\-273)$"
+	},
+	{
+		"id": 13,
+		"question_category": 3,
+		"question_type": "1",
+		"question": "Melyik cég fejleszti a Windows operációs rendszert?",
+		"correct_answer": "Microsoft",
+		"pattern": "^(microsoft)$"
+	},
+	{
+		"id": 14,
+		"question_category": 3,
+		"question_type": "2",
+		"question": "Melyik évben jelent meg az első iPhone?",
+		"correct_answer": "2007",
+		"pattern": "^(2007)$"
+	},
+	{
+		"id": 15,
+		"question_category": 3,
+		"question_type": "1",
+		"question": "Mi a neve a világ legnépszerűbb internetes keresőmotorjának?",
+		"correct_answer": "Google",
+		"pattern": "^(google)$"
+	},
+	{
+		"id": 16,
+		"question_category": 3,
+		"question_type": "3",
+		"question": "Hány bitből áll egy byte?",
+		"correct_answer": "8",
+		"pattern": "^(8)$"
+	},
+	{
+		"id": 17,
+		"question_category": 3,
+		"question_type": "1",
+		"question": "Mi a rövidítése a weboldalak címében használt biztonságos átviteli protokollnak?",
+		"correct_answer": "HTTPS",
+		"pattern": "^(https)$"
+	},
+	{
+		"id": 18,
+		"question_category": 3,
+		"question_type": "1",
+		"question": "Milyen típusú adatbázis-kezelő nyelv a rövidítése az SQL-nek?",
+		"correct_answer": "Strukturált lekérdező nyelv",
+		"pattern": "^(sql|structured query language|strukturált lekérdező nyelv)$"
+	}
+]
