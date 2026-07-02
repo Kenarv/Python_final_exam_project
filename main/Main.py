@@ -120,7 +120,7 @@ else:
         is_correct, message, point = ask_questions(q_type, question, answer=answer, pattern=pattern)
         print(message) # Kiírjuk a konzolra is a visszajelzést
         points += point
-        with open('Hw_results.txt', 'a', encoding='utf-8') as results_file:
+        with open('results_log.txt', 'a', encoding='utf-8') as results_file:
             print(f"{player_name} - {question} -> {message}", file=results_file)
 
     # Eredmények kiírása
