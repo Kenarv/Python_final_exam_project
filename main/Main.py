@@ -118,7 +118,7 @@ if not questions_n_answers:
 else:
     for q_type, question, answer, pattern in questions_n_answers:
         is_correct, message, point = ask_questions(q_type, question, answer=answer, pattern=pattern)
-        print(message) # Kiírjuk a konzolra is a visszajelzést
+        print(message) 
         points += point
         with open('results_log.txt', 'a', encoding='utf-8') as results_file:
             print(f"{player_name} - {question} -> {message}", file=results_file)
@@ -130,10 +130,6 @@ else:
 
     # --- HIGHSCORE / PLAYERS MANIPULÁCIÓ ---
     
-    # 1. Korábbi játékosok beolvasása
-    # --- HIGHSCORE / PLAYERS MANIPULÁCIÓ (Player osztállyal) ---
-    
-    # 1. Korábbi játékosok beolvasása és példányosítása Player objektumokká
     try:
         with open('players.json', 'r', encoding='utf-8') as f:
             raw_data = json.load(f)
@@ -141,8 +137,7 @@ else:
             players_objects = [Player.from_dict(p) for p in raw_data]
     except (FileNotFoundError, json.JSONDecodeError):
         players_objects = []
-
-    # 2. Új játékos példányosítása és hozzáadása a listához
+        
     current_player = Player(
         name=player_name,
         score=points,
@@ -150,20 +145,16 @@ else:
     )
     players_objects.append(current_player)
 
-    # 3. Mentés vissza a JSON fájlba (az objektumokat szótárrá alakítva a .to_dict()-tel)
     with open('players.json', 'w', encoding='utf-8') as f:
         json_ready_data = [player.to_dict() for player in players_objects]
         json.dump(json_ready_data, f, ensure_ascii=False, indent=4)
 
-    # 4. Ranglista rendezése a Player objektum 'score' attribútuma szerint csökkenő sorrendbe
     players_objects.sort(key=lambda x: x.score, reverse=True)
 
-    # 5. Ranglista kirajzolása a konzolra
     print("\n" + "="*30)
     print("         RANGLISTA         ")
     print("="*30)
     for index, player in enumerate(players_objects, start=1):
-        # Kiemeljük az aktuális játékos referenciáját egy nyíllal
         current_marker = " -> " if player is current_player else "    "
         print(f"{current_marker}{index}. {player.name}: {player.score} pont ({player.date})")
     print("="*30)
