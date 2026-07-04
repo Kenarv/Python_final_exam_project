@@ -1,17 +1,12 @@
 [
-    {
-        "name": "proba",
-        "score": 20,
-        "date": "2026-07-02"
-    },
-    {
-        "name": "teszt elek",
-        "score": 15,
-        "date": "2026-07-02"
-    },
-    {
-        "name": "marokMarcsa",
-        "score": 20,
-        "date": "2026-07-02"
-    }
+	{
+		"name": "proba",
+		"score": 20,
+		"date": "2026-07-02"
+	},
+	{
+		"name": "teszt elek",
+		"score": 15,
+		"date": "2026-07-02"
+	}
 ]

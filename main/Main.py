@@ -9,8 +9,6 @@ class Player:
         self.name = name
         self.score = score
         self.date = date
-    def __repr__(self):
-        return f"Player(name={self.name}, score={self.score}, date={self.date})"
     def to_dict(self):
         return {
             "name": self.name,
@@ -133,7 +131,6 @@ else:
     try:
         with open('players.json', 'r', encoding='utf-8') as f:
             raw_data = json.load(f)
-            # Minden szótárból Player objektumot gyártunk
             players_objects = [Player.from_dict(p) for p in raw_data]
     except (FileNotFoundError, json.JSONDecodeError):
         players_objects = []
