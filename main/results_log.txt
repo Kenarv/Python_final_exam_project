@@ -1,0 +1,6 @@
+Kriszti - Melyik cég fejleszti a Windows operációs rendszert? -> Helyes válasz! (5 pont)
+Kriszti - Mi a rövidítése a weboldalak címében használt biztonságos átviteli protokollnak? -> Helyes válasz! (5 pont)
+Kriszti - Mi a neve a világ legnépszerűbb internetes keresőmotorjának? -> Helyes válasz! (5 pont)
+Kriszti - Milyen típusú adatbázis-kezelő nyelv a rövidítése az SQL-nek? -> Helytelen válasz! A helyes válasz "Strukturált lekérdező nyelv" lett volna!
+Kriszti - Hány bitből áll egy byte? -> Helyes válasz! (5 pont)
+Kriszti - Melyik évben jelent meg az első iPhone? -> Helytelen válasz! A helyes válasz "2007" lett volna!

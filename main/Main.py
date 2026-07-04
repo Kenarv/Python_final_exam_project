@@ -4,17 +4,20 @@ import json
 import random
 
 class WrongInputError(ValueError): pass
+
 class Player:
     def __init__(self, name: str, score: int, date: str):
         self.name = name
         self.score = score
         self.date = date
+        
     def to_dict(self):
         return {
             "name": self.name,
             "score": self.score,
             "date": self.date
         }
+        
     @classmethod
     def from_dict(cls, data: dict):
         return cls(
@@ -23,44 +26,44 @@ class Player:
             date=data.get("date", "")
         )
 
-player_name = input("Kérlek, add meg a neved: ").strip()
-while not player_name:
-    player_name = input("A név nem lehet üres! Kérlek, add meg a neved: ").strip()
+# ----- Függvények 
 
-# -----Kategória kiválasztása
-print("\nElérhető kategóriák:\n1 - Történelem\n2 - Fizika\n3 - Tech")
-while True:
-    category_input = input("Írd be a játszani kívánt téma azonosítóját (1, 2 vagy 3): ").strip()
-    if category_input in ['1', '2', '3']:
-        selected_category = int(category_input)
-        break
-    print("Érvénytelen kategória! Kérlek, 1, 2 vagy 3 számot adj meg.")
+def ask_player_name() -> str:
+    name = input("Kérlek, add meg a neved: ").strip()
+    while not name:
+        name = input("A név nem lehet üres! Kérlek, add meg a neved: ").strip()
+    return name
 
-# -----Kérdések beolvasása
-try:
-    with open('questions.json', encoding='utf-8') as questions_file:
-        questions_data = json.load(questions_file)
-except FileNotFoundError:
-    print("A kérdések JSON fájl nem található. Ellenőrizd a fájl elérési útját és nevét.")
-    questions_data = []
+def select_category() -> int:
+    print("\nElérhető kategóriák:\n1 - Történelem\n2 - Fizika\n3 - Tech")
+    while True:
+        category_input = input("Írd be a játszani kívánt téma azonosítóját (1, 2 vagy 3): ").strip()
+        if category_input in ['1', '2', '3']:
+            return int(category_input)
+        print("Érvénytelen kategória! Kérlek, 1, 2 vagy 3 számot adj meg.")
 
-# ------ Kérdések szűrése a kiválasztott kategória alapján:
+def load_questions() -> list:
+    try:
+        with open('questions.json', encoding='utf-8') as questions_file:
+            return json.load(questions_file)
+    except FileNotFoundError:
+        print("A kérdések JSON fájl nem található. Ellenőrizd a fájl elérési útját és nevét.")
+        return []
 
-questions_n_answers = []
-for item in questions_data:
-    if item.get('question_category') == selected_category:
-        questions_n_answers.append((
-            int(item['question_type']), 
-            item['question'], 
-            item['correct_answer'], 
-            item['pattern']
-        ))
+def filter_questions_by_category(questions_data: list, category: int) -> list:
+    questions_n_answers = []
+    for item in questions_data:
+        if item.get('question_category') == category:
+            questions_n_answers.append((
+                int(item['question_type']), 
+                item['question'], 
+                item['correct_answer'], 
+                item['pattern']
+            ))
+    return questions_n_answers
 
-# ------Kérdések megkeverése, hogy random sorrendben jöjjenek
-random.shuffle(questions_n_answers)
-
-points = 0
-max_possible_points = len(questions_n_answers) * 5
+def shuffle_questions(questions_n_answers: list) -> None:
+    random.shuffle(questions_n_answers)
 
 def ask_questions(q_type: int, question: str, **kwargs) -> tuple:
     while True:
@@ -72,7 +75,7 @@ def ask_questions(q_type: int, question: str, **kwargs) -> tuple:
                     if bool(re.search(kwargs['pattern'], userAnswer, re.IGNORECASE)):
                         return True, 'Helyes válasz! (5 pont)', 5 
                     else:
-                        return False, f'Heltelen válasz! A helyes válasz "{kwargs["answer"]}" lett volna!', 0
+                        return False, f'Helytelen válasz! A helyes válasz "{kwargs["answer"]}" lett volna!', 0
 
                 case 2:
                     try:
@@ -104,13 +107,27 @@ def ask_questions(q_type: int, question: str, **kwargs) -> tuple:
                         if difference == 0:
                             return True, 'Helyes válasz! (5 pont)', 5
                         else:
-                            return False, f'Helytelen válasz! A helyes válasz "{kwargs["answer"]}" lett volna! (eltérés: {difference} nap)', 0
+                            return False, f'Heltelen válasz! A helyes válasz "{kwargs["answer"]}" lett volna! (eltérés: {difference} nap)', 0
                     except ValueError:
                         raise WrongInputError(f'Nem megfelelő formátumú dátum: {userAnswer}. Használd az ÉÉÉÉ-HH-NN formátumot.')   
         except WrongInputError as err:
             print(f"Hibás formátum! ({err}) Kérlek add meg újra a választ a megfelelő típusban.")
+# -------------------------------------------
 
-# ----Fő mag
+# ---------------- Fő mag -------------------
+
+#Változók inicializálása:
+player_name = ask_player_name()
+selected_category = select_category()
+all_questions = load_questions()
+questions_n_answers = filter_questions_by_category(all_questions, selected_category)
+points = 0
+max_possible_points = len(questions_n_answers) * 5
+
+#Kérdések keverése helyben:
+shuffle_questions(questions_n_answers)
+
+#GAME:
 if not questions_n_answers:
     print("Ebben a kategóriában nem találtam kérdéseket.")
 else:
@@ -127,7 +144,6 @@ else:
     print(f'Az elért százalék: {percentage:.3g}%')
 
     # --- HIGHSCORE / PLAYERS MANIPULÁCIÓ ---
-    
     try:
         with open('players.json', 'r', encoding='utf-8') as f:
             raw_data = json.load(f)
